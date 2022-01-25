@@ -14,7 +14,7 @@ class PlanetSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('planet')->insert([
+        DB::table('planets')->insert([
             [
                 'name' => '水星',
                 'en_name' => 'MERCURY',
