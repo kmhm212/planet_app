@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PlanetRequest as RequestsPlanetRequest;
-use Illuminate\Requests\PlanetRequest;
+use App\Http\Requests\PlanetRequest;
 use App\Models\Planet;
 
 class PlanetController extends Controller
@@ -14,14 +13,23 @@ class PlanetController extends Controller
         return view('planets.index', compact('planets'));
     }
 
-    public function store()
+    public function store(PlanetRequest $planetRequest)
     {
-        
+        $planet = new Planet;
+
+        $planet->name = $planetRequest->name;
+        $planet->en_name = $planetRequest->en_name;
+        $planet->radius = $planetRequest->radius;
+        $planet->weight = $planetRequest->weight;
+
+        $planet->save();
+
+        return redirect('/planets');
     }
 
     public function create()
     {
-        # code...
+        return view('planets.create');
     }
 
     public function show(Planet $planet)

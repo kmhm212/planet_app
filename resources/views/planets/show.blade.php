@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title,')
+@section('title,惑星情報')
 
 @section('content')
     <h3>名前:{{ $planet->name }}</h3>
