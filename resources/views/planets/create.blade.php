@@ -17,7 +17,6 @@
         </div>
     @endif
 
-    {{-- <form action="{{ route('planets.store')}}" method="POST"> --}}
     <form action="/planets" method="POST">
         @csrf
         <p>

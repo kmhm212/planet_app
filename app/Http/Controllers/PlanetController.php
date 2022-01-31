@@ -37,9 +37,16 @@ class PlanetController extends Controller
         return view('planets.show', compact('planet'));
     }
     
-    public function update()
+    public function update(PlanetRequest $planetRequest, Planet $planet)
     {
-        # code...
+        $planet->name = $planetRequest->name;
+        $planet->en_name = $planetRequest->en_name;
+        $planet->radius = $planetRequest->radius;
+        $planet->weight = $planetRequest->weight;
+
+        $planet->save();
+
+        return redirect('/planets');
     }
     
     public function destroy(Planet $planet)
