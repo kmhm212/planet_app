@@ -24,10 +24,10 @@ class PlanetRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:50',
+            'name'    => 'required|string|max:50',
             'en_name' => 'required|string|max:50',
-            'radius' => 'required|integer|min:0',
-            'weight' => 'required|integer|min:0',
+            'radius'  => 'required|integer|min:0',
+            'weight'  => 'required|integer|min:0',
         ];
     }
 }
